@@ -68,6 +68,7 @@ export default class Picker extends React.Component<IOSNativeProps> {
       testID,
       mode,
       minuteInterval,
+      labelColor,
       timeZoneOffsetInMinutes,
     } = this.props;
 
@@ -88,6 +89,7 @@ export default class Picker extends React.Component<IOSNativeProps> {
           minimumDate={dates.minimumDate}
           mode={mode}
           minuteInterval={minuteInterval}
+          labelColor={labelColor}
           timeZoneOffsetInMinutes={timeZoneOffsetInMinutes}
           onChange={this._onChange}
           onStartShouldSetResponder={() => true}

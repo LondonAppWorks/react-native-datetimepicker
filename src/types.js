@@ -99,6 +99,11 @@ export type IOSNativeProps = $ReadOnly<{|
    * instance, to show times in Pacific Standard Time, pass -7 * 60.
    */
   timeZoneOffsetInMinutes?: ?number,
+
+  /**
+   * Text color as UIColor.
+   */
+  textColor?: string,
 |}>;
 
 export type AndroidNativeProps = $ReadOnly<{|

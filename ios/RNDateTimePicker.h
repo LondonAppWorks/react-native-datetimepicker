@@ -8,5 +8,5 @@
 #import <UIKit/UIKit.h>
 
 @interface RNDateTimePicker : UIDatePicker
-
+@property (nonatomic, strong) UIColor *labelColor;
 @end

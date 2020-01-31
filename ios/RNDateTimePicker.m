@@ -14,6 +14,7 @@
 
 @property (nonatomic, copy) RCTBubblingEventBlock onChange;
 @property (nonatomic, assign) NSInteger reactMinuteInterval;
+@property (nonatomic, strong) UIColor *reactLabelColor;
 
 @end
 
@@ -49,6 +50,23 @@ RCT_NOT_IMPLEMENTED(- (instancetype)initWithCoder:(NSCoder *)aDecoder)
 {
   [super setMinuteInterval:minuteInterval];
   _reactMinuteInterval = minuteInterval;
+}
+
+- (void)setLabelColor:(UIColor *)color {
+  [self setTintColor:color];
+  [self setValue:color forKey:@"textColor"];
+  
+  if ([self respondsToSelector:sel_registerName("setHighlightsToday:")]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    [self performSelector:@selector(setHighlightsToday:) withObject:[NSNumber numberWithBool:NO]];
+#pragma clang diagnostic pop
+    _reactLabelColor = color;
+  }
+}
+
+- (UIColor *)getLabelColor {
+  return self.reactLabelColor;
 }
 
 @end

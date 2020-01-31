@@ -87,6 +87,11 @@ export type IOSNativeProps = Readonly<BaseProps & {
    * instance, to show times in Pacific Standard Time, pass -7 * 60.
    */
   timeZoneOffsetInMinutes?: number,
+
+  /**
+   * Text color
+   */
+  labelColor?: string,
 }>;
 
 export type AndroidNativeProps = Readonly<BaseProps & DateOptions & TimeOptions & {
